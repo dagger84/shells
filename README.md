@@ -3,10 +3,15 @@
 ## Upgrading simple shells to interactive TTYs
 
 ```bash
-pwned-box$ ^Z    # suspend
-host-machine$ stty raw -echo
-host-machine$ fg
-pwned-box$ export TERM=xterm
+pwned-box$ ^Z                     # suspend the process
+host-machine$ echo $TERM          # get the terminal type
+host-machine$ stty -a             # get the number of rows/cols
+host-machine$ stty raw -echo      # convert terminal to raw
+host-machine$ fg                  # re-open the reverse shell
+pwned-box$ reset                  # reset the terminal of the reverse shell
+pwned-box$ export SHELL=bash      # set the TTY settings: SHELL, TERM, and dimensions
+pwned-box$ export TERM=screen
+pwned-box$ stty rows <n_rows> cols <n_cols>
 ```
 
 ## Reverse Shells
