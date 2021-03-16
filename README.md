@@ -1,5 +1,13 @@
 # shells
 
+## Upgrading simple shells to interactive TTYs
+
+```bash
+pwned-box$ ^Z    # suspend
+host-machine$ stty raw -echo
+host-machine$ fg
+pwned-box$ export TERM=xterm
+```
 
 ## Reverse Shells
 
@@ -47,3 +55,5 @@ python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOC
 ## References
 - [Pentestmonkey Reverse Shell Cheatsheet](http://web.archive.org/web/20180702062128/http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet)
 - [Reverse shell with bash](http://web.archive.org/web/20180625050916/http://www.gnucitizen.org/blog/reverse-shell-with-bash/)
+- [The TTY demystified](http://www.linusakesson.net/programming/tty/)
+- [Upgrading simple shells to fully interactive TTYs](https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/)
